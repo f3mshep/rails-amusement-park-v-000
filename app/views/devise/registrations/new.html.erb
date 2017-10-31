@@ -1,0 +1,61 @@
+<h2>Sign up</h2>
+
+<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+  <%= devise_error_messages! %>
+
+  <div class="field">
+    <%= f.label :name %><br />
+    <%= f.text_field :name, autofocus: true %>
+  </div>
+
+  <div class="field">
+    <%= f.label :password %>
+    <% if @minimum_password_length %>
+    <em>(<%= @minimum_password_length %> characters minimum)</em>
+    <% end %><br />
+    <%= f.password_field :password, autocomplete: "off" %>
+  </div>
+
+  <div class="field">
+    <%= f.label 'Height (in inches)' %>
+      <br />
+      <%= f.number_field :height%>
+  </div>
+
+  <div class="field">
+    <%= f.label 'How happy are you? (1-5)' %>
+      <br />
+      <%= f.number_field :happiness %>
+  </div>
+
+  <div class="field">
+    <%= f.label 'How nauseous are you? (1-5)' %>
+      <br />
+      <%= f.number_field :nausea  %>
+  </div>
+
+  <div class="field">
+    <%= f.label 'How many tickets do you want?' %>
+      <br />
+      <%= f.number_field :tickets %>
+  </div>
+
+    <div class="field">
+      <%= f.label 'Are you a theme park owner? No lying!' %>
+        <%= f.check_box :admin  %>
+    </div>
+
+
+
+<!-- 
+  <div class="field">
+    <%= f.label :password_confirmation %><br />
+    <%= f.password_field :password_confirmation, autocomplete: "off" %>
+  </div> -->
+
+  <div class="actions">
+    <%= f.submit "Create User" %>
+  </div>
+<% end %>
+
+<%= render "devise/shared/links" %>

@@ -21,7 +21,6 @@ class User < ActiveRecord::Base
   end
 
   def mood
-    puts 'mood.'
     if happiness > nausea
       "happy"
     else
