@@ -1,0 +1,8 @@
+<h1>Listing Attractions</h1>
+<% @attractions.each do |attraction| %>
+  <div class="row">
+    <div class="col-sm-4"><img src="http://www.allthingsclipart.com/05/amusement.park.05.jpg" alt=""></div>
+    <div class="col-sm-4"><strong><p><%=attraction.name%></p></strong></div>
+    <div class="col-sm-4">Tickets:<%=attraction.tickets%></div>
+  </div>
+<% end %>

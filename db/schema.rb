@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171031181657) do
+ActiveRecord::Schema.define(version: 20171101035535) do
 
   create_table "attractions", force: :cascade do |t|
     t.string  "name"
@@ -33,6 +33,7 @@ ActiveRecord::Schema.define(version: 20171031181657) do
     t.integer  "nausea"
     t.integer  "tickets"
     t.boolean  "admin",                  default: false
+    t.string   "email"
     t.string   "encrypted_password",     default: "",    null: false
     t.string   "reset_password_token"
     t.datetime "reset_password_sent_at"
