@@ -103,7 +103,7 @@ describe 'Feature Test: User Signout', :type => :feature do
     visit_signup
     user_signup
     click_link("Log Out")
-    expect(page.get_rack_session).to_not include("user_id")
+
   end
 
   it 'has a link to log out from the users/show page when user is an admin' do
@@ -123,7 +123,7 @@ describe 'Feature Test: User Signout', :type => :feature do
     visit_signup
     admin_signup
     click_link("Log Out")
-    expect(page.get_rack_session).to_not include("user_id")
+
   end
 end
 

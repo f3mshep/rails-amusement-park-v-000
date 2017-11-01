@@ -1,5 +1,6 @@
 class Users::SessionsController < Devise::SessionsController
   # before_action :configure_sign_in_params, only: [:create]
+
   def after_sign_in_path_for(resource)
       session[:user_id] = User.find_by(name: params[:user][:name]).id
       user_path(current_user)
@@ -16,7 +17,8 @@ class Users::SessionsController < Devise::SessionsController
 
   # DELETE /resource/sign_out
   def destroy
-    session["user_id"] = nil
+    binding.pry
+    session.clear
     super
   end
 

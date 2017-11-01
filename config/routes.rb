@@ -12,8 +12,9 @@ Rails.application.routes.draw do
 
   post "/ride", to: 'users#ride', as: :ride
 
-  devise_for :users
   resources :users
+  devise_for :users
+
   root 'static#home'
 
 end
