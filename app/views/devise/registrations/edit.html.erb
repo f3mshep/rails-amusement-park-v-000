@@ -3,38 +3,50 @@
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
   <%= devise_error_messages! %>
 
-  <div class="field">
-    <%= f.label :name %><br />
+<div class="field">
+  <%= f.label :name %>
+    <br />
     <%= f.text_field :name, autofocus: true %>
-  </div>
+</div>
 
-  <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
-    <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
-  <% end %>
-
-  <div class="field">
-    <%= f.label :password %> <i>(leave blank if you don't want to change it)</i><br />
-    <%= f.password_field :password, autocomplete: "off" %>
+<div class="field">
+  <%= f.label :password %>
     <% if @minimum_password_length %>
-      <br />
-      <em><%= @minimum_password_length %> characters minimum</em>
-    <% end %>
-  </div>
+      <em>(
+        <%= @minimum_password_length %> characters minimum)</em>
+      <% end %>
+    <br />
+  <%= f.password_field :password, autocomplete: "on" %>
+</div>
 
-  <div class="field">
-    <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "off" %>
-  </div>
+<div class="field">
+  <%= f.label 'Height (in inches)' %>
+    <br />
+    <%= f.number_field :height%>
+</div>
 
-  <div class="field">
-    <%= f.label :current_password %> <i>(we need your current password to confirm your changes)</i><br />
-    <%= f.password_field :current_password, autocomplete: "off" %>
-  </div>
+<div class="field">
+  <%= f.label 'How happy are you? (1-5)' %>
+    <br />
+    <%= f.number_field :happiness %>
+</div>
 
-  <div class="actions">
-    <%= f.submit "Update" %>
-  </div>
-<% end %>
+<div class="field">
+  <%= f.label 'How nauseous are you? (1-5)' %>
+    <br />
+    <%= f.number_field :nausea  %>
+</div>
+
+<div class="field">
+  <%= f.label 'How many tickets do you want?' %>
+    <br />
+    <%= f.number_field :tickets %>
+</div>
+
+<div class="field">
+  <%= f.label 'Are you a theme park owner? No lying!' %>
+    <%= f.check_box :admin  %>
+</div>
 
 <h3>Cancel my account</h3>
 

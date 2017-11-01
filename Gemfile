@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 # ruby '2.2.0'
-
+gem 'pry'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2'
 # Use SCSS for stylesheets
@@ -48,7 +48,6 @@ group :test, :development do
   gem "simplecov"
   gem "database_cleaner"
   gem "sqlite3"
-  gem "pry"
   gem "rack_session_access"
 end
 

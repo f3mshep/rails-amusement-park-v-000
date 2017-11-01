@@ -3,7 +3,16 @@
 <% @attractions.each do |attraction| %>
   <div class="row">
     <div class="col-sm-4"><img src="http://www.allthingsclipart.com/05/amusement.park.05.jpg" alt=""></div>
-    <div class="col-sm-4"><%= link_to  "Go on #{attraction.name}", attraction %></div>
+    <%if @current_user.admin%>
+      <div class="col-sm-4"><%= link_to  "Show #{attraction.name}", attraction %></div>
+    <%else%>
+      <div class="col-sm-4"><%= link_to  "Go on #{attraction.name}", attraction %></div>
+    <%end%>
     <div class="col-sm-4"><%=attraction.tickets%> Tickets</div>
   </div>
 <% end %>
+<br>
+
+<%if @current_user.admin%>
+  <%= link_to  "New Attraction", new_attraction_path %>
+<%end%>
