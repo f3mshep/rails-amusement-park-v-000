@@ -17,6 +17,7 @@ class Ride < ActiveRecord::Base
       ride_user.nausea = user.nausea + attraction.nausea_rating
       ride_user.happiness = user.happiness + attraction.happiness_rating
       ride_user.save
+      "Thanks for riding the #{attraction.name}!"
     else
       errors.unshift("Sorry.")
       errors.join(" ")

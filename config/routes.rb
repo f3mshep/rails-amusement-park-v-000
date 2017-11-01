@@ -10,7 +10,8 @@ Rails.application.routes.draw do
     delete '/users/sign_out', to: 'users/sessions#destroy'
   end
 
-  
+  post "/ride", to: 'users#ride', as: :ride
+
   devise_for :users
   resources :users
   root 'static#home'
