@@ -4,6 +4,10 @@ class Ride < ActiveRecord::Base
   belongs_to :attraction
 
   def take_ride
+    #this is an awful method. Only wrote it this way to satisfy tests. Would have
+    #written the method without the part that returns a string, then made that
+    #an actual error. Oh well. Tests are passing
+
     errors = []
     if user.tickets < attraction.tickets
       errors << "You do not have enough tickets to ride the #{attraction.name}."
